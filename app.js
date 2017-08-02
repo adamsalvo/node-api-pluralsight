@@ -21,7 +21,7 @@ app.use('/api/books', bookRouter)
 app.use('/api/authors', authorRouter)
 
 app.get('/', function (req, res) {
-    res.send('Welcome to my API!')
+    res.send('Welcome to book-api :)')
 })
 
 app.listen(port, function () {
