@@ -3,7 +3,12 @@ var express = require('express'),
     bodyParser = require('body-parser')
 
 
-var db = mongoose.connect('mongodb://localhost/book-api')
+var db
+if (process.env.ENV === "Test") {
+    db = mongoose.connect('mongodb://localhost/book-api-test')
+} else {
+    db = mongoose.connect('mongodb://localhost/book-api')    
+}
 var Book = require('./models/bookModel')
 var Author = require('./models/authorModel')
 var app = express()
