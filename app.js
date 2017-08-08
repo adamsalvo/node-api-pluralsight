@@ -9,6 +9,7 @@ if (process.env.ENV === "Test") {
 } else {
     db = mongoose.connect('mongodb://localhost/book-api')    
 }
+
 var Book = require('./models/bookModel')
 var Author = require('./models/authorModel')
 var app = express()
@@ -32,3 +33,5 @@ app.get('/', function (req, res) {
 app.listen(port, function () {
     console.log('Running on PORT: ' + port)
 })
+
+module.exports = app
